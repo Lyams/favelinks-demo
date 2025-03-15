@@ -1,0 +1,6 @@
+[submodule "frontendFaveLinks"]
+	path = frontendFaveLinks
+	url = git@github.com:Lyams/frontendFaveLinks.git
+[submodule "backendFaveLinks"]
+	path = backendFaveLinks
+	url = git@github.com:Lyams/backendFaveLinks.git

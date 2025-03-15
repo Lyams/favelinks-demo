@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: 
+      context: ./backendFaveLinks
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backendFaveLinks:/rails
+    environment:
+      - DATABASE_HOST=localhost
+      - DATABASE_USERNAME=sqlite
+      - DATABASE_PASSWORD=sqlite
+
+  frontend:
+    build: ./frontendFaveLinks
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./frontendFaveLinks:/app
+    environment:
+      - REACT_APP_API_URL=http://backend:3000/graphql
