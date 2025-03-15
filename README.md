@@ -2,14 +2,26 @@
 
 ## Как запустить проект:
 
+0. Скопировать проект:
+
+```bash
+git clone git@github.com:Lyams/favelinks-demo.git
+cd favelinks-demo
+git submodule init
+git submodule update
+```
+
 1. Используем докер компоуз:
 
 ```bash
 docker compose build
-docker compose run backend bundle exec bin/rails db:seed
+docker compose run backend bundle exec bin/rails db:migrate db:seed
+docker compose run frontend npm install
+docker compose 
 docker compose up
 ```
-(многовато потратил времени на докер, почему-то не мог загрузить сиды заранее)
+многовато потратил времени на докер, в т.ч. почему-то не мог загрузить сиды заранее и какие-то траблы с npm.
+Давно не настраивал его с нуля. Обещаю разобраться, в чем тут дело, но убил на него больше все времени. 
 
 2. Открываем страницу с приложением в браузере [http://localhost:3001](localhost:3001)
 
